@@ -489,8 +489,8 @@ addEventListener('resize',fit);fit();
 [...new Set(S.map(x=>x.dataset.d))].forEach(n=>{new Image().src='d/'+n+'.webp'});
 S.forEach((x,i)=>{x.querySelector('.k').dataset.n=String(i+1).padStart(2,'0')});
 const pan=document.getElementById('pan'),num=document.getElementById('num'),PC=['#7c9ac8','#dcbf93','#c0a3de','#f9edee'];
-let cur='wave';
-function onS(){const m=innerHeight*.45;let on=S[0];for(const x of S){if(x.getBoundingClientRect().top<=m)on=x}
+let cur='wave',lastS=S[0];
+function onS(){const m=innerHeight*.45;const hit=document.elementFromPoint(innerWidth*.4,m);let on=hit&&hit.closest('.s');if(on)lastS=on;else on=lastS;
  if(on.dataset.d!==cur){cur=on.dataset.d;di.src='d/'+cur+'.webp'}
  const ix=S.indexOf(on);pan.style.background=PC[ix%PC.length];num.textContent=String(ix+1).padStart(2,'0');
  const h=document.documentElement.scrollHeight-innerHeight;bar.style.width=(h>0?scrollY/h*100:0)+'%'}
