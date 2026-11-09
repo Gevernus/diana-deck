@@ -125,17 +125,19 @@ audio.pl{height:30px;width:190px;display:block}
 <section class="s" id="s3" data-d="dance">
   <div class="k">Статус</div>
   <h2>Что работает, а что пока <em>только собрано</em></h2>
-  <div class="w" style="height:660px;grid-template-columns:1.08fr 1fr 1fr">
-    <div class="c R lane"><h3 style="color:var(--good)">6 <span>работает вживую</span></h3><div class="pr" style="background:var(--good)"></div>
-      <div class="it">Разговор на русском<small>101 ход в журнале за день</small></div>
-      <div class="it">Библиотека Steam<small>Настоящие игры и часы</small></div>
+  <div class="w" style="height:760px;grid-template-columns:1.08fr 1fr 1fr">
+    <div class="c R lane"><h3 style="color:var(--good)">7 <span>работает вживую</span></h3><div class="pr" style="background:var(--good)"></div>
+      <div class="it">Разговор на русском<small>Ответ через 2,1 с, заглушка через 1,3 с</small></div>
+      <div class="it">Библиотека и ачивки Steam<small>Настоящие игры, часы, скидки</small></div>
+      <div class="it">Статистика Dota 2<small>Реальные матчи, MVP, герои</small></div>
       <div class="it">Задачи и вкладки<small>Сводка и управление голосом</small></div>
       <div class="it">Образ и реакции<small>24 клипа, танец по клику</small></div>
       <div class="it">Команды WoW голосом<small>12 нажатий, 0 ложных на 173 фразах</small></div>
       <div class="it">События Steam, проба<small>Ачивка за &lt; 1 с, черновик другу</small></div></div>
-    <div class="c Go lane"><h3 style="color:var(--amber)">3 <span>собрано, не доказано</span></h3><div class="pr" style="width:50%;background:var(--amber)"></div>
+    <div class="c Go lane"><h3 style="color:var(--amber)">4 <span>собрано, не доказано</span></h3><div class="pr" style="width:50%;background:var(--amber)"></div>
+      <div class="it">Три тарифа голоса<small>Переключаются, в видео не показаны</small></div>
       <div class="it">Агент для кода<small>Голосовой запуск не проверен</small></div>
-      <div class="it">Память о разговорах<small>13 запусков, пока ничего не подставила</small></div>
+      <div class="it">Память о разговорах<small>Поиск по прошлым разговорам пока ничего не подставляет</small></div>
       <div class="it">Бот в WoW<small>1,9 ч, 19 убийств, ур. 9, приёмка открыта</small></div></div>
     <div class="c lane"><h3 style="color:var(--mute)">5 <span>в планах</span></h3><div class="pr" style="background:var(--line)"></div>
       <div class="it">Плагин SteamBooster<small>Нужны доступы от SB</small></div>
@@ -252,7 +254,7 @@ audio.pl{height:30px;width:190px;display:block}
       <div><div class="b" style="font-size:36px">+$0,39<span class="m"> /час</span></div><div class="m" style="margin-top:3px">Если распознавание уходит в облако</div></div>
     </div>
   </div>
-  <div class="src">Замер: журнал живых разговоров, 3 разговора, 13 минут, один человек: 310 знаков в минуту, текст $0,145 за час (по сессиям $0,05–0,38). Цены голоса с сайтов; Inworld без абонплаты, на планах $0,38–0,52. Базовый голос: Supertonic на CPU при 500 активных, расчёт. VoxCPM2 при полной загрузке карты, 7500 ч в месяц; при малой загрузке час дороже.</div>
+  <div class="src">Замер: журнал живых разговоров, 3 разговора, 13 минут, один человек: 310 знаков в минуту, текст $0,145 за час (по сессиям $0,05–0,38). Цены голоса с сайтов; Inworld без абонплаты, на планах $0,38–0,52. Базовый голос: Supertonic на CPU при 500 активных по 30 минут в день (7500 ч), расчёт; при лимите бесплатных 30 минут в месяц около $0,31 за час. VoxCPM2 при полной загрузке карты, 7500 ч в месяц; при малой загрузке час дороже.</div>
 </section>
 
 <section class="s" id="vq" data-d="talk">
@@ -269,7 +271,7 @@ audio.pl{height:30px;width:190px;display:block}
 <tr><td style="padding-left:0;color:var(--ink);font-weight:700">Piper, чужой голос</td><td>сервер</td><td class="n1">8%</td><td class="n1">0,28</td><td class="n1">—</td><td><audio class="pl" controls preload="none" src="v/denis/00.mp3"></audio></td><td><audio class="pl" controls preload="none" src="v/denis/05.mp3"></audio></td></tr>
   <tr><td style="padding-left:0;color:var(--ink);font-weight:700">Её настоящая запись</td><td>эталон</td><td class="n1">—</td><td class="n1">0,96</td><td class="n1">—</td><td colspan="2"><audio class="pl" controls preload="none" src="v/her/01.mp3"></audio></td></tr>
   </table></div>
-  <div class="src">10 фраз, по одному свежему варианту на модель; облачные голоса по образцу на 16 секунд. VoxCPM2 дообучена на 5,6 мин её речи и выбрана на слух на средний тариф. Сходство: косинус эмбеддинга OpenVoice, это приближённая оценка. * сходство новых образцов не сравнить со старыми: они записаны другим микрофоном. Слепой тест: 10 фраз, один слушатель, сравнивались только облачные голоса, ElevenLabs Flash набрал 1 из 10 и в таблицу не вошёл. Главный критерий естественности — прослушивание.</div>
+  <div class="src">10 фраз, по одному свежему варианту на модель; облачные голоса по образцу на 16 секунд; ElevenLabs и Inworld здесь со старым клоном, в видео новый клон. VoxCPM2 дообучена на 5,6 мин её речи и выбрана на слух на средний тариф. Сходство: косинус эмбеддинга OpenVoice, это приближённая оценка. * сходство новых образцов не сравнить со старыми: они записаны другим микрофоном. Слепой тест: 10 фраз, один слушатель, сравнивались только облачные голоса, ElevenLabs Flash набрал 1 из 10 и в таблицу не вошёл. Главный критерий естественности — прослушивание.</div>
 </section>
 
 <section class="s" id="vprice" data-d="look">
@@ -277,10 +279,10 @@ audio.pl{height:30px;width:190px;display:block}
   <h2>Её голос: <em>Inworld на старте</em>, своя карта дешевле от <em>~140 платящих</em></h2>
   <div class="l" style="width:1204px;margin-bottom:8px">Фраза «Ну привет. Опять до утра…» · $ за час при 300 платящих</div>
   <div class="w" style="height:auto;grid-template-columns:repeat(4,1fr)">
-<div class="c R"><div class="l">Inworld TTS-2</div><div style="margin-top:10px"><audio class="pl" controls preload="none" src="v/inworld2/05.mp3"></audio></div><div class="b" style="font-size:54px;margin-top:12px">$0,42</div><div class="m" style="font-size:16px;margin-top:6px">облако</div><div class="m" style="font-size:16px;margin-top:2px">так звучит сегодняшний живой показ</div></div>
+<div class="c R"><div class="l">Inworld TTS-2</div><div style="margin-top:10px"><audio class="pl" controls preload="none" src="v/inworld2/05.mp3"></audio></div><div class="b" style="font-size:54px;margin-top:12px">$0,42</div><div class="m" style="font-size:16px;margin-top:6px">облако</div></div>
 <div class="c Cr"><div class="l">ElevenLabs v4 Turbo</div><div style="margin-top:10px"><audio class="pl" controls preload="none" src="v/el_v4turbo/05.mp3"></audio></div><div class="b" style="font-size:54px;margin-top:12px">$0,89</div><div class="m" style="font-size:16px;margin-top:6px">облако</div></div>
 <div class="c Li"><div class="l">VoxCPM2, её голос (дообученная)</div><div style="margin-top:10px"><audio class="pl" controls preload="none" src="v/lora_s150_t10/05.mp3"></audio></div><div class="b" style="font-size:54px;margin-top:12px">$0,57</div><div class="m" style="font-size:16px;margin-top:6px">аренда карты · своя карта $0,30</div><div class="m" style="font-size:16px;margin-top:2px">видеокарта</div></div>
-<div class="c Go"><div class="l">Базовый голос, наш VPS</div><div style="margin-top:10px"><audio class="pl" controls preload="none" src="v/supertonic3/05.mp3"></audio></div><div class="b" style="font-size:54px;margin-top:12px">$0,20</div><div class="m" style="font-size:16px;margin-top:6px">Supertonic на CPU, при 500 активных</div><div class="m" style="font-size:16px;margin-top:2px">не её голос</div></div>
+<div class="c Go"><div class="l">Базовый голос, наш VPS</div><div style="margin-top:10px"><audio class="pl" controls preload="none" src="v/supertonic3/05.mp3"></audio></div><div class="b" style="font-size:54px;margin-top:12px">$0,20</div><div class="m" style="font-size:16px;margin-top:6px">Supertonic на CPU, при 30 минутах в день у 500 активных; при лимите бесплатных около $0,31</div><div class="m" style="font-size:16px;margin-top:2px">не её голос</div></div>
   </div>
   <div class="m" style="width:1204px;font-size:16px;margin:8px 0 14px">Одна фраза, тот же образец на 16 секунд; VoxCPM2 дообучена на 5,6 мин её речи, выбрана на слух.
 Supertonic — чужой тембр, только для бесплатного тарифа.</div>
@@ -323,7 +325,7 @@ Supertonic — чужой тембр, только для бесплатного
 <tr><td style="padding-left:0;color:var(--ink);font-weight:700">Qwen 1.7B, пакет 8</td><td>RTX 4090</td><td class="n1">64</td><td class="n1">0,06</td><td class="n1">0,65</td><td class="n1">0,06</td><td>0% опозданий</td></tr>
 <tr><td style="padding-left:0;color:var(--ink);font-weight:700">Qwen 1.7B, пакет 8</td><td>RTX 4090</td><td class="n1">100</td><td class="n1">0,07</td><td class="n1">3,5</td><td class="n1">0,07</td><td>7% опаздывает</td></tr>
   </table></div>
-  <div class="src">Замер 09.11: Timeweb, виртуальные ядра 3,3 ГГц; RunPod RTX 4090. Диана говорит 30% времени, у каждого разговора своя копия модели. Сеть до игрока не входит. Замеры по 60 секунд, кроме строк с пометкой 15 мин. На Hetzner AX42 не мерили, там ядра должны быть быстрее, поэтому число серверов ниже с запасом.</div>
+  <div class="src">Замер 09.11: Timeweb, виртуальные ядра 3,3 ГГц; RunPod RTX 4090. Диана говорит 30% времени. На CPU и у ESpeech своя копия модели на разговор; VoxCPM2 и Qwen работали общим сервером. Сеть до игрока не входит. Замеры по 60 секунд, кроме строк с пометкой 15 мин. На Hetzner AX42 не мерили, там ядра должны быть быстрее, поэтому число серверов ниже с запасом.</div>
 </section>
 
 <section class="s" id="v500" data-d="think">
@@ -366,7 +368,7 @@ Supertonic — чужой тембр, только для бесплатного
   <div class="src">Комиссия 5%, налог 6%, все выбирают лимит полностью, 310 знаков в минуту. Бесплатный: текст 30 минут $0,07 + проба её голоса $0,07 разово × 25% новых в месяц (допущение) + сервер $40 (расчёт); при 5000 активных $0,12.
 30 минут в день на ElevenLabs реально продавать от $19,99, на Inworld без абонплаты от $14,99. Средний: с $6,99 остаётся $6,24, текст $0,73 на человека, карта фиксированно: аренда Secure $641 в месяц, Community $245 (не всегда есть свободные, ноль при 44 платящих), своя $228 (допущение, ноль при 41).
 Выгоднее Inworld от ~460 платящих на Secure и ~150 на Community.
-На Inworld +$3,19 без абонплаты; на планах Developer +$4,12, Growth +$4,35. Дообучение: 5,6 минуты её речи, 150 шагов; сходство со старым эталоном сравнивать нельзя, другой микрофон. 64 разговора на карту измерены на базовой VoxCPM2, с дообучением нагрузку не мерили.</div>
+На Inworld +$3,19 без абонплаты; на планах Developer +$4,12, Growth +$4,35. Дообучение: 5,6 минуты её речи, 150 шагов, перед запуском его нужно повторить, около 20 минут на карте; сходство со старым эталоном сравнивать нельзя, другой микрофон. 64 разговора на карту измерены на базовой VoxCPM2, с дообучением нагрузку не мерили.</div>
 </section>
 
 <section class="s" id="s11" data-d="typing">
@@ -426,7 +428,7 @@ Supertonic — чужой тембр, только для бесплатного
         <li><b>Деньги:</b> средний чек, приём оплат в плагине</li>
       </ul>
       <div class="l" style="margin-top:40px">Проверяем дёшево</div>
-      <ul class="tight" style="font-size:22px;gap:19px;margin-top:16px"><li>10 человек по 15 минут, ~$20 токенов: сколько она говорит</li><li>Кнопка «Голос $6,99» на 500 установках</li></ul>
+      <ul class="tight" style="font-size:22px;gap:19px;margin-top:16px"><li>10 человек по 15 минут, около $2–3 голоса и текста: сколько она говорит</li><li>Кнопка «Голос $6,99» на 500 установках</li></ul>
     </div>
     <div class="c"><div class="l">Грант ElevenLabs</div>
       <div class="b" style="font-size:124px;margin-top:12px">33M</div><div class="m" style="font-size:18px;margin-top:4px">на 12 месяцев, ответ за неделю</div>
@@ -440,7 +442,7 @@ Supertonic — чужой тембр, только для бесплатного
     </div>
     <div class="c Li"><div class="l">План и риски</div>
       <ul class="tight" style="font-size:22px;gap:19px;margin-top:16px">
-        <li><b>Голос:</b> замер нагрузки дообученной VoxCPM2</li>
+        <li><b>Голос:</b> повторить дообучение VoxCPM2, замерить нагрузку</li>
         <li><b>Скорость:</b> заглушка сразу после фразы</li>
         <li><b>Windows:</b> ядро и распознавание</li>
         <li><b>Грант:</b> заявка после уточнения</li>
@@ -455,7 +457,7 @@ Supertonic — чужой тембр, только для бесплатного
   <div class="k">Демо</div>
   <h2>Диана <em>вживую</em></h2>
   <div class="c" style="width:1204px;padding:0"><video src="v/demo.mp4" controls preload="metadata" style="width:100%;display:block"></video></div>
-  <div class="src">Живой разговор с Дианой, голос ElevenLabs v4 Turbo. Steam, ачивки и статистика Dota 2 по реальным данным, без монтажа.</div>
+  <div class="src">Живой разговор с Дианой, голос ElevenLabs v4 Turbo. Steam, ачивки и статистика Dota 2 по реальным данным. Обрезаны только начало и конец.</div>
 </section>
 
 </div>
