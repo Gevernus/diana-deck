@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Диана: статус и экономика</title>
+<style>
+@font-face{font-family:Unbounded;src:url(f/unbounded.ttf) format("truetype");font-weight:200 900}
+@font-face{font-family:Onest;src:url(f/onest.ttf) format("truetype");font-weight:100 900}
+:root{--c-ink:#22191b;--c-plum:#4f3f44;--c-crim:#7c2636;--c-hot:#db7997;--c-rose:#f3b1c2;--c-cream:#f9edee;--c-skin:#efd0d1;--c-blue:#7c9ac8;--c-lil:#c0a3de;--c-gold:#dcbf93;
+--bg:var(--c-ink);--line:var(--c-plum);--ink:var(--c-cream);--ink2:var(--c-skin);--mute:var(--c-skin);--pink:var(--c-rose);--lil:var(--c-lil);--cy:var(--c-blue);--good:var(--c-gold);--bad:var(--c-hot);--amber:var(--c-gold);--blue:var(--c-blue);--plum:var(--c-plum);--num:Onest,-apple-system,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--c-ink)}
+body{background:var(--c-ink);font:17px/1.32 Onest,-apple-system,sans-serif;color:var(--c-cream);-webkit-font-smoothing:antialiased}
+#pan{position:fixed;right:0;top:0;bottom:0;width:20vw;background:var(--c-blue);overflow:hidden;z-index:0}
+#num{position:absolute;left:.7vw;top:-.6vw;font:900 11.2vw/1 Unbounded,sans-serif;letter-spacing:-.06em;color:var(--c-ink)}
+#diana{position:fixed;right:calc(10vw - min(97vh,54vw)*.28125);bottom:-3vh;height:min(97vh,54vw);z-index:2;pointer-events:none}
+#stage{position:relative;z-index:1;width:1280px;padding-bottom:72px}
+.s{position:relative;padding:84px 48px 0;counter-increment:sec}
+.k{font:700 14px/1 Onest,sans-serif;letter-spacing:.02em;text-transform:lowercase;color:var(--c-hot);margin-bottom:14px}
+.k:before{content:"(" attr(data-n) ")  "}
+h2{font:700 41px/1.1 Unbounded,sans-serif;letter-spacing:-.035em;margin:0 0 26px;width:1204px}
+h2 em{font-style:normal;color:var(--c-rose)}
+.w{position:relative;width:1204px;display:grid;gap:0}
+.c{background:var(--c-ink);outline:1.5px solid var(--line);outline-offset:-.75px;padding:20px 22px;min-width:0;position:relative}
+.l{font-size:13.5px;font-weight:700;letter-spacing:0;text-transform:lowercase;color:var(--ink2)}
+.m{font-size:15px;color:var(--mute)}
+.b{font-family:var(--num);font-weight:800;letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
+.t2{color:var(--ink2)}
+.tag{display:inline-block;font-size:12px;font-weight:700;padding:3px 9px;background:transparent;color:var(--ink2);border:1.5px solid var(--line);white-space:nowrap}
+.tag.a{color:var(--ink);border-color:var(--line)}
+.tag.p{background:var(--c-hot);color:var(--c-ink);border-color:var(--c-hot)}
+.row{display:flex;align-items:center;gap:10px}
+.row b{white-space:nowrap}
+#o1,#o2,#o3,#o4,#o5{font-size:38px!important;white-space:nowrap}
+.br{height:15px;min-width:2px}
+.src{font-size:13.5px;color:var(--c-skin);width:1204px;margin-top:12px}
+#bar{position:fixed;left:0;top:0;height:4px;background:var(--c-hot);z-index:5}
+#tip{position:fixed;display:none;background:var(--c-cream);color:var(--c-ink);font-size:14px;font-weight:600;padding:5px 9px;pointer-events:none;z-index:9;white-space:nowrap}
+.hero{font:900 246px/.92 Unbounded,sans-serif;letter-spacing:-.07em;color:var(--c-cream);text-transform:uppercase;margin:0 0 34px -12px}
+.lead{font:700 37px/1.14 Unbounded,sans-serif;letter-spacing:-.035em;width:1204px}
+.lead span{color:var(--c-rose)}
+.mq{width:1204px;overflow:hidden;background:var(--c-hot);color:var(--c-ink);margin-top:34px;padding:13px 0;font:700 21px/1 Unbounded,sans-serif;letter-spacing:-.02em;white-space:nowrap}
+.mq div{display:inline-block;animation:mq 26s linear infinite}
+@keyframes mq{to{transform:translateX(-50%)}}
+.kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:0;width:1204px}
+.kpi .c{padding:24px 22px 26px}
+.kpi .b{font-size:64px}
+.pipe{display:grid;grid-template-columns:.85fr 1fr 1fr 1fr 1.25fr;gap:0}
+.n{position:relative}
+.n:not(:last-child):after{content:"";position:absolute;right:-11px;top:50%;width:0;height:0;margin-top:-10px;border-left:13px solid var(--c-hot);border-top:10px solid transparent;border-bottom:10px solid transparent;z-index:3}
+.n h4{font:700 19px/1.15 Unbounded,sans-serif;letter-spacing:-.03em;margin:7px 0 5px}
+.cost{font:800 34px/1 var(--num);letter-spacing:-.03em;margin-top:12px}
+.chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.cb{font:700 15.5px Onest,sans-serif;padding:8px 14px;border:1.5px solid var(--c-plum);background:transparent;color:var(--c-skin);cursor:pointer}.cb.on{background:var(--c-hot);border-color:var(--c-hot);color:var(--c-ink)}
+.tag.ch{font-size:15px;padding:4px 11px;color:var(--ink)}
+.lane h3{font:800 58px/1 var(--num);letter-spacing:-.04em;display:flex;align-items:baseline;gap:10px}
+.lane h3 span{font:700 16px/1 Onest,sans-serif;letter-spacing:0;color:var(--ink2)}
+.it{padding:17px 0;border-top:1.5px solid var(--line);font-weight:700;font-size:21px;line-height:1.2}
+.it small{display:block;font-weight:500;font-size:16px;color:var(--mute);margin-top:2px}
+.pr{height:8px;margin:12px 0 9px}
+table{border-collapse:separate;border-spacing:0;width:100%;font-size:16.5px}
+th{font-size:13px;font-weight:700;text-transform:lowercase;color:var(--ink2);text-align:left;padding:0 10px 9px;vertical-align:bottom}
+td{padding:10px;border-top:1.5px solid var(--line);color:var(--ink2);vertical-align:middle}
+td.n1,th.n1{text-align:right;font-family:var(--num);font-variant-numeric:tabular-nums;font-weight:700;color:var(--ink);white-space:nowrap}
+th.n1{font-family:inherit;color:var(--ink2);white-space:normal}
+tr.pk{--ink:var(--c-ink);--ink2:var(--c-ink);--mute:var(--c-ink);--pink:var(--c-ink);--lil:var(--c-ink);--cy:var(--c-ink)}
+tr.pk td{background:var(--c-rose);color:var(--c-ink);font-weight:700;border-top-color:var(--c-rose)}
+.hot{background:var(--c-hot);color:var(--c-ink)}
+.ax{position:relative;height:150px;margin-top:6px}
+.seg{position:absolute;top:44px;height:40px;display:flex;align-items:center;justify-content:center;font:800 16px/1 var(--num);color:var(--c-ink);white-space:nowrap}
+.mk{position:absolute;top:18px;height:92px;border-left:2px dashed var(--c-gold)}
+.mk b{position:absolute;top:-19px;left:-2px;font:800 14px/1 var(--num);color:var(--c-gold);white-space:nowrap}
+.tk{position:absolute;top:116px;font-size:13px;color:var(--mute);transform:translateX(-50%)}
+.ctr>.c{display:flex;flex-direction:column;justify-content:center}
+.fx{display:grid;grid-template-columns:148px 1fr;align-items:center;gap:14px;border-top:1.5px solid var(--line)}.fx:first-child{border-top:0}.fx b{font-size:38px;color:var(--pink)}.fx span{font-size:16px;color:var(--mute)}.fx strong{display:block;font-size:20px;color:var(--ink);font-weight:800}
+.tier{display:flex;flex-direction:column}
+.tier .b.p0{font-size:84px;margin-top:9px}.tier ul{list-style:none;margin-top:14px;display:grid;gap:7px;color:var(--ink2);font-size:19px}
+.tier li{padding-left:17px;position:relative}.tier li:before{content:"";position:absolute;left:0;top:8px;width:9px;height:9px;background:var(--c-hot)}
+.tier .bot{margin-top:auto}
+.stk{display:flex;height:26px;gap:0;margin:0 0 9px}.stk i{display:block;height:26px}
+.lg{display:flex;gap:14px;font-size:13.5px;color:var(--ink2);flex-wrap:wrap}.lg i{display:inline-block;width:12px;height:12px;margin-right:5px;vertical-align:-1px;outline:1px solid var(--line)}
+.lad{display:grid;grid-template-columns:repeat(8,1fr);gap:0;align-items:end;height:152px}
+.lad div{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;font-size:14.5px;color:var(--ink2);text-align:center;line-height:1.1}
+.lad b{font:800 19px/1 var(--num);color:var(--ink);margin-bottom:4px}
+.lad i{display:block;width:100%;background:var(--c-plum);margin-bottom:5px}.lad .o i{background:var(--c-rose)}
+.sk{overflow:hidden;position:relative;background:var(--c-skin);height:100%}
+.sk img{width:100%;height:100%;object-fit:cover;object-position:50% 10%;display:block}
+.sk span{position:absolute;left:0;bottom:0;background:var(--c-ink);color:var(--c-cream);font:700 15px/1 Unbounded,sans-serif;letter-spacing:-.03em;padding:9px 12px}
+.heat td{border:0;padding:0}.heat .v{display:block;padding:56px 4px;text-align:center;font:800 37px/1 var(--num);letter-spacing:-.03em;font-variant-numeric:tabular-nums;outline:1.5px solid var(--c-ink);outline-offset:-.75px}
+.heat td.h{color:var(--ink2);font-size:18px;padding-right:10px;line-height:1.2}
+.wf{display:grid;grid-template-columns:repeat(6,1fr);gap:0;height:510px;align-items:end;border-bottom:1.5px solid var(--line)}
+.wf>div{position:relative;height:100%}.wf i{position:absolute;left:0;right:0}
+.wf b{position:absolute;left:0;right:0;text-align:center;font:800 24px/1 var(--num)}
+.wfl{display:grid;grid-template-columns:repeat(6,1fr);gap:0;font-size:15.5px;line-height:1.15;color:var(--ink2);text-align:center;margin-top:9px}
+ul.tight{list-style:none;display:grid;gap:7px;margin-top:9px;font-size:16px;color:var(--ink2)}
+ul.tight li{padding-left:15px;position:relative;line-height:1.25}ul.tight li:before{content:"";position:absolute;left:0;top:7px;width:8px;height:8px;background:var(--c-hot)}
+ul.tight b{color:var(--ink)}
+.hb{display:grid;grid-template-columns:132px 1fr 54px;grid-auto-rows:1fr;gap:6px 8px;align-items:center;margin-top:10px;font-size:15.5px;height:calc(100% - 34px)}
+/* tile colours: every background is one of Diana's own colours */
+.R{background:var(--c-rose)}.Cr{background:var(--c-cream)}.Li{background:var(--c-lil)}.Go{background:var(--c-gold)}.Bl{background:var(--c-blue)}.Ho{background:var(--c-hot)}
+.R,.Cr,.Li,.Go,.Bl,.Ho{--ink:var(--c-ink);--ink2:var(--c-ink);--mute:var(--c-ink);--pink:var(--c-crim);--lil:var(--c-ink);--cy:var(--c-ink);--good:var(--c-ink);--bad:var(--c-crim);--amber:var(--c-ink);--line:var(--c-ink);color:var(--c-ink)}
+audio.pl{height:30px;width:190px;display:block}
+</style>
+</head>
+<body>
+<div id="pan"><span id="num">01</span></div><div id="bar"></div><img id="diana" src="d/wave.webp" alt="">
+<div id="stage">
+
+<section class="s" id="s1" data-d="wave">
+  <div class="k">SteamBooster × Диана · статус и экономика</div>
+  <div class="hero">Диана</div>
+  <div class="lead">Голосовая подруга для геймеров, <span>а не ассистент</span></div>
+  <div class="mq"><div>живой русский ✦ 45 секунд слушает без имени ✦ библиотека Steam ✦ команды WoW голосом ✦ вкладки и задачи ✦ клон голоса ✦ скины ✦&nbsp;живой русский ✦ 45 секунд слушает без имени ✦ библиотека Steam ✦ команды WoW голосом ✦ вкладки и задачи ✦ клон голоса ✦ скины ✦&nbsp;</div></div>
+  <div class="kpi">
+    <div class="c R"><div class="b">$0,17</div><div class="t2" style="margin-top:7px">бесплатный игрок в месяц при 500 активных</div></div>
+    <div class="c Cr"><div class="b">+$3,19</div><div class="t2" style="margin-top:7px">остаётся с подписки $6,99 на Inworld</div></div>
+    <div class="c Li"><div class="b">$0,61</div><div class="t2" style="margin-top:7px">час разговора её голосом на старте</div></div>
+    <div class="c Go"><div class="b">Steam</div><div class="t2" style="margin-top:7px">живой русский, настоящие игры и часы; в демо, плагина ещё нет</div></div>
+  </div>
+  <div class="src">$0,17: текст 30 минут $0,07 + проба её голоса $0,07 разово × 25% новых в месяц (допущение) + сервер базового голоса $40 в месяц (расчёт); при 5000 активных $0,12. +$3,19: комиссия 5%, налог 6%, лимит выбран полностью (допущение); на дообученной VoxCPM2 и аренде карты ноль при ~116 платящих. $0,61: Inworld TTS-2, цена с сайта; 310 знаков в минуту и текст $0,145 за час измерены на 13 минутах одного человека.</div>
+</section>
+
+<section class="s" id="s3" data-d="dance">
+  <div class="k">Статус</div>
+  <h2>Что работает, а что пока <em>только собрано</em></h2>
+  <div class="w" style="height:660px;grid-template-columns:1.08fr 1fr 1fr">
+    <div class="c R lane"><h3 style="color:var(--good)">6 <span>работает вживую</span></h3><div class="pr" style="background:var(--good)"></div>
+      <div class="it">Разговор на русском<small>101 ход в журнале за день</small></div>
+      <div class="it">Библиотека Steam<small>Настоящие игры и часы</small></div>
+      <div class="it">Задачи и вкладки<small>Сводка и управление голосом</small></div>
+      <div class="it">Образ и реакции<small>24 клипа, танец по клику</small></div>
+      <div class="it">Команды WoW голосом<small>12 нажатий, 0 ложных на 173 фразах</small></div>
+      <div class="it">События Steam, проба<small>Ачивка за &lt; 1 с, черновик другу</small></div></div>
+    <div class="c Go lane"><h3 style="color:var(--amber)">3 <span>собрано, не доказано</span></h3><div class="pr" style="width:50%;background:var(--amber)"></div>
+      <div class="it">Агент для кода<small>Голосовой запуск не проверен</small></div>
+      <div class="it">Память о разговорах<small>13 запусков, пока ничего не подставила</small></div>
+      <div class="it">Бот в WoW<small>1,9 ч, 19 убийств, ур. 9, приёмка открыта</small></div></div>
+    <div class="c lane"><h3 style="color:var(--mute)">5 <span>в планах</span></h3><div class="pr" style="background:var(--line)"></div>
+      <div class="it">Плагин SteamBooster<small>Нужны доступы от SB</small></div>
+      <div class="it">Windows<small>Основная платформа аудитории SB</small></div>
+      <div class="it">Питомец без ИИ, гайды<small>Основа бесплатного уровня</small></div>
+      <div class="it">Микрофон в Steam, Shift+Tab<small>Проверяем на Windows</small></div>
+      <div class="it">Discord, подключение к катке<small>Кода пока нет</small></div></div>
+  </div>
+</section>
+
+<section class="s" id="s2" data-d="talk">
+  <div class="k">Как устроена</div>
+  <h2>Один контур. <em>Хост меняется</em>, ядро остаётся</h2>
+  <div class="w" style="height:600px;grid-template-rows:auto auto 1fr">
+    <div class="pipe">
+      <div class="c n"><div class="l">1 · Слух</div><h4>Микрофон</h4><div class="m">Эхо, шум, конец фразы</div><div class="cost" style="color:var(--mute)">$0</div></div>
+      <div class="c n"><div class="l">2 · Текст</div><h4>GigaAM</h4><div class="m">На устройстве</div><div class="cost">$0</div></div>
+      <div class="c n"><div class="l">3 · Ответ</div><h4>Gemini Flash-Lite</h4><div class="m">Запасная: Haiku</div><div class="cost">$0,15<span class="m"> /час</span></div></div>
+      <div class="c R n"><div class="l">4 · Голос</div><h4>VoxCPM2 / ElevenLabs</h4><div class="m">Средний / дорогой тариф, старт на Inworld</div><div class="cost">до $0,74<span class="m"> /час</span></div></div>
+      <div class="c n"><div class="l">5 · Дело</div><h4>Навыки</h4><div class="chips"><span class="tag ch" style="font-size:15px;padding:4px 11px">Steam</span><span class="tag ch" style="font-size:15px;padding:4px 11px">WoW</span><span class="tag ch" style="font-size:15px;padding:4px 11px">вкладки</span><span class="tag ch" style="font-size:15px;padding:4px 11px">кино</span><span class="tag ch" style="font-size:15px;padding:4px 11px">поиск</span></div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 40px 1fr;align-items:center">
+      <div class="c Cr"><div class="row"><span class="l">Хост сегодня</span><span class="tag" style="border-color:var(--c-ink);color:var(--c-ink)">работает</span></div><div style="font-size:24px;font-weight:800;margin-top:4px">Приложение на Mac</div></div>
+      <div style="text-align:center;font-size:30px;color:var(--pink);font-weight:800">→</div>
+      <div class="c"><div class="row"><span class="l">Хост дальше</span><span class="tag">не начат</span></div><div style="font-size:24px;font-weight:800;margin-top:4px">Плагин SteamBooster, Windows</div></div>
+    </div>
+    <div class="ctr" style="display:grid;grid-template-columns:repeat(3,1fr);gap:0">
+      <div class="c Bl"><div class="b" style="font-size:92px;color:var(--pink)">45 с</div><div style="font-weight:800;font-size:25px;margin-top:14px">Окно внимания</div><div class="m" style="font-size:18px;margin-top:3px">Имя один раз, потом 45 с слушает без него</div></div>
+      <div class="c Go"><div class="b" style="font-size:92px;color:var(--pink)">1,5K</div><div style="font-weight:800;font-size:25px;margin-top:14px">Знаков характера</div><div class="m" style="font-size:18px;margin-top:3px">Остальное подгружается веткой по теме</div></div>
+      <div class="c Li"><div class="b" style="font-size:92px;color:var(--pink)">1</div><div style="font-weight:800;font-size:25px;margin-top:14px">Вопрос за раз, и ждёт ответа</div><div class="m" style="font-size:18px;margin-top:3px">Реплика поверх её фразы может быть ответом</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="s" id="s7" data-d="reading">
+  <div class="k">Нагрузка на ПК</div>
+  <h2>На ПК игрока только слух: <em>1% процессора</em>, 0,5 ГБ, 180 МБ</h2>
+  <div class="w" style="height:auto;grid-template-columns:1.35fr 1fr 1fr 1fr">
+    <div class="c R"><div class="l">Процессор</div><div class="b" style="font-size:56px;margin-top:12px;white-space:nowrap">0,5–1,3%</div><div class="m" style="margin-top:8px;font-size:17px">в среднем, весь ПК 6 ядер / 12 потоков</div></div>
+    <div class="c Cr"><div class="l">Память</div><div class="b" style="font-size:56px;margin-top:12px;white-space:nowrap">500 МБ</div><div class="m" style="margin-top:8px;font-size:17px">на время разговора</div></div>
+    <div class="c Li"><div class="l">Скачать</div><div class="b" style="font-size:56px;margin-top:12px;white-space:nowrap">180 МБ</div><div class="m" style="margin-top:8px;font-size:17px">один раз</div></div>
+    <div class="c Go"><div class="l">Видеокарта</div><div class="b" style="font-size:56px;margin-top:12px;white-space:nowrap">0</div><div class="m" style="margin-top:8px;font-size:17px">голос всегда на сервере</div></div>
+  </div>
+  <div class="w" style="height:auto;grid-template-columns:1.25fr 1fr">
+    <div class="c"><div class="l">Что остаётся на ПК</div>
+      <table style="margin-top:10px;font-size:18px"><tr><th style="padding-left:0">Компонент</th><th class="n1">Ядро CPU, в разговоре</th><th class="n1">ОЗУ</th><th class="n1">Скачать</th></tr>
+      <tr><td style="padding-left:0">Silero: слышит речь</td><td class="n1">0,3%</td><td class="n1">мало</td><td class="n1">&lt;1 МБ</td></tr>
+      <tr><td style="padding-left:0">GigaAM: распознаёт</td><td class="n1">2,6%</td><td class="n1">450 МБ</td><td class="n1">155 МБ</td></tr>
+      <tr><td style="padding-left:0">Проигрывание голоса</td><td class="n1">не мерили отдельно</td><td class="n1">—</td><td class="n1">—</td></tr>
+      <tr><td style="padding-left:0">Фигура Дианы, отдельно</td><td class="n1">до 9%</td><td class="n1">—</td><td class="n1">клипы</td></tr>
+      <tr class="pk"><td>Итого без фигуры, весь ПК</td><td class="n1">0,5–1,3%</td><td class="n1">500 МБ</td><td class="n1">180 МБ</td></tr></table>
+      <div class="m" style="margin-top:10px;font-size:16px">Фигура: 9% одного ядра M1 при программном декодировании, при аппаратном почти ноль. В 0,5–1,3% не входит.</div></div>
+    <div style="display:grid;grid-template-rows:1fr 1fr;gap:0">
+      <div class="c Bl"><div class="l">Голос с нашего сервера</div><div class="b" style="font-size:66px;margin-top:8px">~1 с</div><div class="m" style="margin-top:6px;font-size:17px">первый звук короткой фразы: p50 0,95 с, p95 1,38 с. Supertonic, 4 ядра, 3 разговора, 15 минут. Только синтез: без ответа модели и сети до игрока</div></div>
+      <div class="c Cr"><div class="l">Если и распознавание на сервер</div><div class="b" style="font-size:48px;margin-top:8px">&lt;1% и 30 МБ</div><div class="m" style="margin-top:6px;font-size:17px">но плюс $0,39 за час (Scribe), в смете этого нет</div></div>
+    </div>
+  </div>
+  <div class="src">Голос у игрока не запускаем. Цифры из расчёта «голос на нашем CPU, распознавание на ПК»: замер на Apple M1 Pro, 2 потока, пересчёт на ПК: разница одноядерной скорости ×1,1–1,75. Под игрой и на Windows не мерили: влияние на FPS проверим на Windows через PresentMon. 56% ПК в Steam на 6–8 ядрах, опрос Steam, октябрь 2026.</div>
+</section>
+
+<section class="s" id="s5" data-d="worry">
+  <div class="k">Качество</div>
+  <h2>Ответ через <em>2,1 с</em>, заглушка через <em>1,3 с</em>. Тормозит модель, а не голос</h2>
+  <div class="w" style="height:610px;grid-template-rows:auto 1fr">
+    <div class="c"><div class="l">От конца фразы до первого звука, медианы этапов</div>
+      <div class="ax">
+        <div class="seg" style="left:0;width:106px;background:var(--cy)" data-tip="Конец фразы и решение ответить: 0,42 с">0,42</div>
+        <div class="seg" style="left:108px;width:259px;background:var(--pink)" data-tip="Модель до первого токена: 1,02 с">Модель 1,02</div>
+        <div class="seg" style="left:369px;width:16px;background:var(--c-skin)" data-tip="Сборка предложения: 0,07 с"></div>
+        <div class="seg" style="left:387px;width:70px;background:var(--lil)" data-tip="Озвучка: 0,28 с">0,28</div>
+        <div class="seg" style="left:459px;width:68px;background:var(--good)" data-tip="Вывод звука: 0,27 с">0,27</div>
+        <div class="seg" style="left:529px;width:118px;background:transparent;outline:1.5px solid var(--c-skin);outline-offset:-1px;color:var(--c-skin)" data-tip="90-й перцентиль: 2,53 с">до 2,53 (p90)</div>
+        <div class="mk" style="left:154px"><b>цель 0,6</b></div>
+        <div class="mk" style="left:333px"><b>заглушка 1,3</b></div>
+        <div class="mk" style="left:527px"><b>ответ 2,06</b></div>
+        <span class="tk" style="left:0;transform:none">0 с</span><span class="tk" style="left:256px">1</span><span class="tk" style="left:512px">2</span><span class="tk" style="left:768px">3</span><span class="tk" style="left:1024px">4 с</span>
+      </div>
+      <div class="lg"><span><i style="background:var(--cy)"></i>Конец фразы и решение</span><span><i style="background:var(--pink)"></i>Модель, главное узкое место</span><span><i style="background:var(--c-skin)"></i>Сборка предложения</span><span><i style="background:var(--lil)"></i>Озвучка</span><span><i style="background:var(--good)"></i>Вывод звука</span></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr;gap:0">
+      <div class="c"><div class="l">Ошибка распознавания</div>
+        <div style="display:grid;grid-template-columns:150px 1fr 62px;gap:0 10px;grid-auto-rows:1fr;align-items:center;height:calc(100% - 26px);margin-top:6px;font-size:18px">
+          <span class="t2">Чистая речь</span><div class="br" style="width:24.5%;height:18px;background:var(--cy)" data-tip="13%"></div><b class="b" style="font-size:25px">13%</b>
+          <span class="t2">Шум игры</span><div class="br" style="width:28.3%;height:18px;background:var(--cy)" data-tip="15%"></div><b class="b" style="font-size:25px">15%</b>
+          <span style="font-weight:800">Живые записи</span><div class="br" style="width:50.9%;height:18px;background:var(--pink)" data-tip="27%"></div><b class="b" style="font-size:25px">27%</b>
+          <span class="t2">Громкая игра</span><div class="br" style="width:100%;height:18px;background:var(--cy)" data-tip="53%"></div><b class="b" style="font-size:25px">53%</b>
+        </div></div>
+    </div>
+  </div>
+  <div class="src">Замер: журнал живого разговора, 19 ходов, один человек, 09.11, 19:53–20:29 по Бали, ElevenLabs v4 Turbo, Apple M1 Pro, без игры, сервер моделей в облаке. Ответ: медиана 2,06 с, p90 2,53 с, максимум 2,59 с. Заглушка: медиана 1,30 с, максимум 2,06 с. Цель 0,6 с пока не достигнута.</div>
+</section>
+
+<section class="s" id="s6" data-d="think">
+  <div class="k">Себестоимость</div>
+  <h2>Час её голосом <em>$0,61</em> в облаке, <em>$0,23</em> на загруженной карте</h2>
+  <div class="w" style="height:640px;grid-template-rows:1fr auto;grid-template-columns:1fr 1.14fr">
+    <div class="c"><div class="row" style="justify-content:space-between"><span class="l">$ за час разговора</span><span class="lg"><span><i style="background:var(--pink)"></i>голос</span><span><i style="background:var(--lil)"></i>модель</span></span></div>
+      <div class="hb">
+        <span class="t2">Базовый голос, наш VPS</span><div class="row" style="gap:2px"><div class="br" style="width:5.8%;height:18px;background:var(--pink)" data-tip="Голос $0,058 при 500 активных"></div><div class="br" style="width:14.5%;height:18px;background:var(--lil)" data-tip="Модель $0,145"></div></div><b class="b" style="font-size:22px">0,20</b>
+        <span class="t2">VoxCPM2, аренда карты</span><div class="row" style="gap:2px"><div class="br" style="width:8.6%;height:18px;background:var(--pink)" data-tip="Голос $0,086 при 7500 ч в месяц на карту"></div><div class="br" style="width:14.5%;height:18px;background:var(--lil)" data-tip="Модель $0,145"></div></div><b class="b" style="font-size:22px">0,23</b>
+        <span class="t2">Inworld Flash</span><div class="row" style="gap:2px"><div class="br" style="width:27.9%;height:18px;background:var(--pink)" data-tip="Голос $0,28"></div><div class="br" style="width:14.5%;height:18px;background:var(--lil)" data-tip="Модель $0,145"></div></div><b class="b" style="font-size:22px">0,42</b>
+        <span style="font-weight:800">Inworld TTS-2</span><div class="row" style="gap:2px"><div class="br" style="width:46.5%;height:18px;background:var(--pink)" data-tip="Голос $0,465"></div><div class="br" style="width:14.5%;height:18px;background:var(--lil)" data-tip="Модель $0,145"></div></div><b class="b" style="font-size:22px;color:var(--pink)">0,61</b>
+        <span class="t2">ElevenLabs Turbo</span><div class="row" style="gap:2px"><div class="br" style="width:74.4%;height:18px;background:var(--pink)" data-tip="Голос $0,744"></div><div class="br" style="width:14.5%;height:18px;background:var(--lil)" data-tip="Модель $0,145"></div></div><b class="b" style="font-size:22px">0,89</b>
+      </div></div>
+    <div class="c Cr"><div class="row" style="justify-content:space-between"><span class="l">$ на пользователя в месяц</span><span class="tag a">сценарии: допущение</span></div>
+      <table style="margin-top:10px;height:calc(100% - 58px);font-size:18px"><tr><th style="padding-left:0">Сценарий</th><th class="n1">ElevenLabs</th><th class="n1">Inworld TTS-2</th><th class="n1">Базовый голос, VPS</th></tr>
+      <tr><td style="padding-left:0">Лёгкий · 60 мин</td><td class="n1">0,89</td><td class="n1">0,61</td><td class="n1">0,20</td></tr>
+      <tr><td style="padding-left:0">Средний · 300 мин</td><td class="n1">4,45</td><td class="n1">3,05</td><td class="n1">1,01</td></tr>
+      <tr><td style="padding-left:0">Активный · 1000 мин</td><td class="n1"><span class="hot" style="padding:3px 8px">14,82</span></td><td class="n1"><span class="hot" style="padding:3px 8px">10,17</span></td><td class="n1">3,38</td></tr>
+      <tr><td style="padding-left:0;color:var(--ink);font-weight:700">Топ · 3600 мин</td><td class="n1"><span class="hot" style="padding:3px 8px">53,34</span></td><td class="n1"><span class="hot" style="padding:3px 8px">36,60</span></td><td class="n1"><span class="hot" style="padding:3px 8px">12,16</span></td></tr></table>
+      <div class="m" style="margin-top:7px"><span class="hot" style="padding:0 6px;color:var(--ink)">цвет</span> дороже среднего тарифа $6,99: без лимита нельзя</div></div>
+    <div class="c R" style="grid-column:1/3;display:grid;grid-template-columns:repeat(2,1fr);gap:18px">
+      <div><div class="b" style="font-size:36px">×1,5</div><div class="m" style="margin-top:3px">Голос дорожает, если она говорит 474 знака в минуту, а не 310</div></div>
+      <div><div class="b" style="font-size:36px">+$0,39<span class="m"> /час</span></div><div class="m" style="margin-top:3px">Если распознавание уходит в облако</div></div>
+    </div>
+  </div>
+  <div class="src">Замер: журнал живых разговоров, 3 разговора, 13 минут, один человек: 310 знаков в минуту, текст $0,145 за час (по сессиям $0,05–0,38). Цены голоса с сайтов; Inworld без абонплаты, на планах $0,38–0,52. Базовый голос: Supertonic на CPU при 500 активных, расчёт. VoxCPM2 при полной загрузке карты, 7500 ч в месяц; при малой загрузке час дороже.</div>
+</section>
+
+<section class="s" id="vq" data-d="talk">
+  <div class="k">Качество голоса</div>
+  <h2>Её голос: <em>дообученная VoxCPM2</em> на среднем тарифе, облако на старте</h2>
+  <div class="c" style="width:1204px;padding-top:18px"><table style="font-size:18px">
+  <tr><th style="padding-left:0">Голос</th><th>Где работает</th><th class="n1">Ошибки распознавания</th><th class="n1">Сходство, потолок 0,96</th><th class="n1">Слепой тест, из 10</th><th>«Ты звонишь маме…»</th><th>«Ну привет. Опять до утра…»</th></tr>
+<tr><td style="padding-left:0;color:var(--ink);font-weight:700">Inworld TTS-2</td><td>облако</td><td class="n1">0%</td><td class="n1">0,87</td><td class="n1">1</td><td><audio class="pl" controls preload="none" src="v/inworld2/00.mp3"></audio></td><td><audio class="pl" controls preload="none" src="v/inworld2/05.mp3"></audio></td></tr>
+<tr><td style="padding-left:0;color:var(--ink);font-weight:700">ElevenLabs v4 Turbo</td><td>облако</td><td class="n1">2,7%</td><td class="n1">0,88</td><td class="n1">8</td><td><audio class="pl" controls preload="none" src="v/el_v4turbo/00.mp3"></audio></td><td><audio class="pl" controls preload="none" src="v/el_v4turbo/05.mp3"></audio></td></tr>
+<tr><td style="padding-left:0;color:var(--ink);font-weight:700">ESpeech RL-V2</td><td>видеокарта</td><td class="n1">0%</td><td class="n1">0,89</td><td class="n1">—</td><td><audio class="pl" controls preload="none" src="v/espeech/00.mp3"></audio></td><td><audio class="pl" controls preload="none" src="v/espeech/05.mp3"></audio></td></tr>
+<tr><td style="padding-left:0;color:var(--ink);font-weight:700">Qwen 1.7B, новый образец</td><td>видеокарта</td><td class="n1">2,7%</td><td class="n1">*</td><td class="n1">—</td><td><audio class="pl" controls preload="none" src="v/qwen_new_b/00.mp3"></audio></td><td><audio class="pl" controls preload="none" src="v/qwen_new_b/05.mp3"></audio></td></tr>
+<tr><td style="padding-left:0;color:var(--ink);font-weight:700">VoxCPM2, дообученная на её голосе</td><td>видеокарта</td><td class="n1">4%</td><td class="n1">*</td><td class="n1">—</td><td><audio class="pl" controls preload="none" src="v/lora_s150_t10/00.mp3"></audio></td><td><audio class="pl" controls preload="none" src="v/lora_s150_t10/05.mp3"></audio></td></tr>
+<tr><td style="padding-left:0;color:var(--ink);font-weight:700">Supertonic, чужой голос</td><td>сервер</td><td class="n1">—</td><td class="n1">0,60</td><td class="n1">—</td><td><audio class="pl" controls preload="none" src="v/supertonic3/00.mp3"></audio></td><td><audio class="pl" controls preload="none" src="v/supertonic3/05.mp3"></audio></td></tr>
+<tr><td style="padding-left:0;color:var(--ink);font-weight:700">Piper, чужой голос</td><td>сервер</td><td class="n1">8%</td><td class="n1">0,28</td><td class="n1">—</td><td><audio class="pl" controls preload="none" src="v/denis/00.mp3"></audio></td><td><audio class="pl" controls preload="none" src="v/denis/05.mp3"></audio></td></tr>
+  <tr><td style="padding-left:0;color:var(--ink);font-weight:700">Её настоящая запись</td><td>эталон</td><td class="n1">—</td><td class="n1">0,96</td><td class="n1">—</td><td colspan="2"><audio class="pl" controls preload="none" src="v/her/01.mp3"></audio></td></tr>
+  </table></div>
+  <div class="src">10 фраз, по одному свежему варианту на модель; облачные голоса по образцу на 16 секунд. VoxCPM2 дообучена на 5,6 мин её речи и выбрана на слух на средний тариф. Сходство: косинус эмбеддинга OpenVoice, это приближённая оценка. * сходство новых образцов не сравнить со старыми: они записаны другим микрофоном. Слепой тест: 10 фраз, один слушатель, сравнивались только облачные голоса, ElevenLabs Flash набрал 1 из 10 и в таблицу не вошёл. Главный критерий естественности — прослушивание.</div>
+</section>
+
+<section class="s" id="vprice" data-d="look">
+  <div class="k">Голос: цена за час и как звучит</div>
+  <h2>Её голос: <em>Inworld на старте</em>, своя карта дешевле от <em>~140 платящих</em></h2>
+  <div class="l" style="width:1204px;margin-bottom:8px">Фраза «Ну привет. Опять до утра…» · $ за час при 300 платящих</div>
+  <div class="w" style="height:auto;grid-template-columns:repeat(4,1fr)">
+<div class="c R"><div class="l">Inworld TTS-2</div><div style="margin-top:10px"><audio class="pl" controls preload="none" src="v/inworld2/05.mp3"></audio></div><div class="b" style="font-size:54px;margin-top:12px">$0,42</div><div class="m" style="font-size:16px;margin-top:6px">облако</div><div class="m" style="font-size:16px;margin-top:2px">так звучит сегодняшний живой показ</div></div>
+<div class="c Cr"><div class="l">ElevenLabs v4 Turbo</div><div style="margin-top:10px"><audio class="pl" controls preload="none" src="v/el_v4turbo/05.mp3"></audio></div><div class="b" style="font-size:54px;margin-top:12px">$0,89</div><div class="m" style="font-size:16px;margin-top:6px">облако</div></div>
+<div class="c Li"><div class="l">VoxCPM2, её голос (дообученная)</div><div style="margin-top:10px"><audio class="pl" controls preload="none" src="v/lora_s150_t10/05.mp3"></audio></div><div class="b" style="font-size:54px;margin-top:12px">$0,57</div><div class="m" style="font-size:16px;margin-top:6px">аренда карты · своя карта $0,30</div><div class="m" style="font-size:16px;margin-top:2px">видеокарта</div></div>
+<div class="c Go"><div class="l">Базовый голос, наш VPS</div><div style="margin-top:10px"><audio class="pl" controls preload="none" src="v/supertonic3/05.mp3"></audio></div><div class="b" style="font-size:54px;margin-top:12px">$0,20</div><div class="m" style="font-size:16px;margin-top:6px">Supertonic на CPU, при 500 активных</div><div class="m" style="font-size:16px;margin-top:2px">не её голос</div></div>
+  </div>
+  <div class="m" style="width:1204px;font-size:16px;margin:8px 0 14px">Одна фраза, тот же образец на 16 секунд; VoxCPM2 дообучена на 5,6 мин её речи, выбрана на слух.
+Supertonic — чужой тембр, только для бесплатного тарифа.</div>
+  <div class="w" style="height:auto;grid-template-columns:2.25fr 1fr">
+    <div class="c"><div class="l">$ за час разговора с текстом</div><table style="font-size:17.5px;margin-top:10px">
+    <tr><th style="padding-left:0">Масштаб</th><th class="n1">Часов/мес</th><th class="n1">Inworld (план)</th><th class="n1">ElevenLabs</th><th class="n1">VoxCPM2 аренда Secure</th><th class="n1">VoxCPM2 своя карта</th></tr>
+<tr><td style="padding-left:0;color:var(--ink);font-weight:700">20 платящих</td><td class="n1">100</td><td class="n1"><span style="background:var(--c-gold);color:var(--c-ink);padding:3px 8px">$0,52 <span style="font-size:13px;font-weight:500">Creator</span></span></td><td class="n1">$0,89</td><td class="n1">$6,56</td><td class="n1">$2,43</td></tr>
+<tr><td style="padding-left:0;color:var(--ink);font-weight:700">100 платящих</td><td class="n1">500</td><td class="n1"><span style="background:var(--c-gold);color:var(--c-ink);padding:3px 8px">$0,47 <span style="font-size:13px;font-weight:500">Builder</span></span></td><td class="n1">$0,89</td><td class="n1">$1,43</td><td class="n1">$0,60</td></tr>
+<tr><td style="padding-left:0;color:var(--ink);font-weight:700">300 платящих</td><td class="n1">1500</td><td class="n1">$0,42 <span style="font-size:13px;font-weight:500">Developer</span></td><td class="n1">$0,89</td><td class="n1">$0,57</td><td class="n1"><span style="background:var(--c-gold);color:var(--c-ink);padding:3px 8px">$0,30</span></td></tr>
+<tr><td style="padding-left:0;color:var(--ink);font-weight:700">1000 платящих</td><td class="n1">5000</td><td class="n1">$0,42 <span style="font-size:13px;font-weight:500">Developer</span></td><td class="n1">$0,89</td><td class="n1">$0,27</td><td class="n1"><span style="background:var(--c-gold);color:var(--c-ink);padding:3px 8px">$0,19</span></td></tr>
+<tr><td style="padding-left:0;color:var(--ink);font-weight:700">500 активных по 30 мин/день</td><td class="n1">7500</td><td class="n1">$0,38 <span style="font-size:13px;font-weight:500">Growth</span></td><td class="n1">$0,89</td><td class="n1">$0,23</td><td class="n1"><span style="background:var(--c-gold);color:var(--c-ink);padding:3px 8px">$0,18</span></td></tr>
+    </table></div>
+    <div class="c Bl"><div class="l">Своя карта дешевле Inworld от</div><div class="b" style="font-size:84px;margin-top:10px">~140</div>
+      <div class="m" style="font-size:18px;margin-top:4px">платящих, ~700 ч в месяц</div>
+      <div class="l" style="margin-top:20px">Аренда Secure</div><div class="m" style="font-size:18px;margin-top:4px">от ~460 платящих, ~2300 ч</div>
+      <div class="l" style="margin-top:14px">Community</div><div class="m" style="font-size:18px;margin-top:4px">от ~150 платящих, ~750 ч</div></div>
+  </div>
+  <div class="src">Цены проверены 09.11.2026: inworld.ai/pricing (Creator $20 → Growth $12,5 за млн знаков по объёму), elevenlabs.io/pricing/api (v4 Turbo $40 за млн на всех планах, скидок нет).
+Час = 310 знаков в минуту + текст Gemini $0,145: замер, 3 разговора, 13 минут, один человек. Платящий = 300 минут в месяц.
+Аренда RTX 4090 Secure $641 в месяц, 64 разговора на карту — замер на базовой VoxCPM2, 60 секунд, без сети до игрока.
+Своя карта $228 и Community $245 в месяц — допущение. Inworld Enterprise от $5 за млн — по запросу, не считан.</div>
+</section>
+
+<section class="s" id="vload" data-d="reading">
+  <div class="k">Нагрузка на сервер</div>
+  <h2>Одна RTX 4090 держит <em>64 разговора</em>, 8 ядер CPU — 10–16</h2>
+  <div class="c" style="width:1204px;padding-top:18px"><table style="font-size:18px">
+  <tr><th style="padding-left:0">Вариант</th><th>Железо</th><th class="n1">Разговоров сразу</th><th class="n1">Первый звук p50, с</th><th class="n1">p95, с</th><th class="n1">Короткая фраза, с</th><th>Заметка</th></tr>
+<tr><td style="padding-left:0;color:var(--ink);font-weight:700">Piper</td><td>2 ядра</td><td class="n1">4</td><td class="n1">1,34</td><td class="n1">2,08</td><td class="n1">0,69</td><td></td></tr>
+<tr><td style="padding-left:0;color:var(--ink);font-weight:700">Piper</td><td>8 ядер</td><td class="n1">16</td><td class="n1">1,35</td><td class="n1">1,76</td><td class="n1">—</td><td></td></tr>
+<tr><td style="padding-left:0;color:var(--ink);font-weight:700">Piper</td><td>8 ядер</td><td class="n1">48</td><td class="n1">1,72</td><td class="n1">5,2</td><td class="n1">—</td><td>12% опаздывает</td></tr>
+<tr><td style="padding-left:0;color:var(--ink);font-weight:700">Supertonic</td><td>4 ядра · 15 мин</td><td class="n1">3</td><td class="n1">1,49</td><td class="n1">2,23</td><td class="n1">0,95</td><td>0% опозданий</td></tr>
+<tr><td style="padding-left:0;color:var(--ink);font-weight:700">Supertonic</td><td>8 ядер · 15 мин</td><td class="n1">10</td><td class="n1">1,67</td><td class="n1">2,30</td><td class="n1">1,03</td><td>0,2% опозданий</td></tr>
+<tr><td style="padding-left:0;color:var(--ink);font-weight:700">Supertonic</td><td>8 ядер</td><td class="n1">16</td><td class="n1">1,93</td><td class="n1">4,9</td><td class="n1">1,13</td><td>3% опаздывает</td></tr>
+<tr><td style="padding-left:0;color:var(--ink);font-weight:700">Supertonic + тембр</td><td>8 потоков</td><td class="n1">1</td><td class="n1">1,95</td><td class="n1">4,6</td><td class="n1">1,76</td><td>весь сервер на 1 разговор</td></tr>
+<tr><td style="padding-left:0;color:var(--ink);font-weight:700">ESpeech</td><td>RTX 4090</td><td class="n1">1</td><td class="n1">1,56</td><td class="n1">3,0</td><td class="n1">—</td><td>на 4 разговорах 32% опаздывает</td></tr>
+<tr><td style="padding-left:0;color:var(--ink);font-weight:700">VoxCPM2, общий сервер</td><td>RTX 4090</td><td class="n1">32</td><td class="n1">0,06</td><td class="n1">0,08</td><td class="n1">0,06</td><td>0% опозданий</td></tr>
+<tr><td style="padding-left:0;color:var(--ink);font-weight:700">VoxCPM2, общий сервер</td><td>RTX 4090</td><td class="n1">64</td><td class="n1">0,07</td><td class="n1">0,11</td><td class="n1">0,07</td><td>0% опозданий</td></tr>
+<tr><td style="padding-left:0;color:var(--ink);font-weight:700">Qwen 1.7B, пакет 8</td><td>RTX 4090</td><td class="n1">32</td><td class="n1">0,05</td><td class="n1">0,10</td><td class="n1">0,05</td><td>0% опозданий</td></tr>
+<tr><td style="padding-left:0;color:var(--ink);font-weight:700">Qwen 1.7B, пакет 8</td><td>RTX 4090</td><td class="n1">64</td><td class="n1">0,06</td><td class="n1">0,65</td><td class="n1">0,06</td><td>0% опозданий</td></tr>
+<tr><td style="padding-left:0;color:var(--ink);font-weight:700">Qwen 1.7B, пакет 8</td><td>RTX 4090</td><td class="n1">100</td><td class="n1">0,07</td><td class="n1">3,5</td><td class="n1">0,07</td><td>7% опаздывает</td></tr>
+  </table></div>
+  <div class="src">Замер 09.11: Timeweb, виртуальные ядра 3,3 ГГц; RunPod RTX 4090. Диана говорит 30% времени, у каждого разговора своя копия модели. Сеть до игрока не входит. Замеры по 60 секунд, кроме строк с пометкой 15 мин. На Hetzner AX42 не мерили, там ядра должны быть быстрее, поэтому число серверов ниже с запасом.</div>
+</section>
+
+<section class="s" id="v500" data-d="think">
+  <div class="k">500 пользователей</div>
+  <h2>Без лимитов <em>час в день в облаке</em> на $6,99 не окупается</h2>
+  <div class="w" style="grid-template-columns:1.9fr 1fr;height:auto">
+    <div class="c"><div class="l">В месяц на 500 активных, если говорят каждый день</div><table style="font-size:18.5px;margin-top:12px">
+    <tr><th style="padding-left:0">Вариант</th><th class="n1">30 мин в день</th><th class="n1">60 мин в день</th><th class="n1">На человека</th><th>Что внутри</th></tr>
+<tr><td style="padding-left:0;color:var(--ink);font-weight:700">Её голос, RTX 4090 аренда Secure + текст</td><td class="n1">$1 730</td><td class="n1">$3 460</td><td class="n1">$3,5 / $6,9</td><td>1 и 2 карты по $641 в месяц</td></tr>
+<tr><td style="padding-left:0;color:var(--ink);font-weight:700">Её голос, RTX 4090 Community + текст</td><td class="n1">$1 330</td><td class="n1">$2 670</td><td class="n1">$2,7 / $5,3</td><td>по $245, не всегда есть свободные</td></tr>
+<tr><td style="padding-left:0;color:var(--ink);font-weight:700">Её голос, своя RTX 4090 + текст</td><td class="n1">$1 320</td><td class="n1">$2 630</td><td class="n1">$2,6 / $5,3</td><td>$228 в месяц: 24 месяца износа, свет, место</td></tr>
+<tr><td style="padding-left:0;color:var(--ink);font-weight:700">ElevenLabs v4 Turbo + текст</td><td class="n1">$6 670</td><td class="n1">$13 340</td><td class="n1">$13,3 / $26,7</td><td>облако, нагрузка на нас нулевая</td></tr>
+<tr><td style="padding-left:0;color:var(--ink);font-weight:700">Inworld TTS-2 + текст</td><td class="n1">$2 830</td><td class="n1">$5 660</td><td class="n1">$5,7 / $11,3</td><td>облако, план Growth, $12,5 за млн знаков</td></tr>
+<tr><td style="padding-left:0;color:var(--ink);font-weight:700">Supertonic на CPU + текст</td><td class="n1">$1 520</td><td class="n1">$3 050</td><td class="n1">$3,0 / $6,1</td><td>4 и 8 серверов AX42</td></tr>
+<tr><td style="padding-left:0;color:var(--ink);font-weight:700">Piper на CPU + текст</td><td class="n1">$1 420</td><td class="n1">$2 720</td><td class="n1">$2,8 / $5,4</td><td>3 и 5 серверов AX42</td></tr>
+    </table></div>
+    <div class="c R"><div class="l">В пик вечером</div><div class="b" style="font-size:84px;margin-top:10px">38–75</div><div class="m" style="font-size:19px;margin-top:6px">разговоров одновременно, расчёт</div>
+      <div class="l" style="margin-top:28px">Вывод</div><ul class="tight" style="font-size:20px;gap:14px;margin-top:12px"><li>ElevenLabs без лимитов: минус на $6,99, на $14,99 сходится только 30 минут в день</li><li>Её голос на своей карте: $2,6 за 30 минут в день и $5,3 за час, с $6,99 остаётся $6,24</li><li>Карта дешевле Inworld от ~2300 ч голоса в месяц на аренде Secure, ~700 ч на своей карте</li></ul></div>
+  </div>
+  <div class="src">310 знаков голоса в минуту и $0,145 текста за час: журнал 3 сессий, 13 минут, один человек (по сессиям $0,05–0,38). 30–60 минут в день — ожидание основателя. Пик 15% суточного объёма в час. Одна RTX 4090 тянет 64 разговора: замер на 60 секунд, без сети до игрока и без запаса на отказ. Своя карта окупается против Secure за 5–7 месяцев. Кредиты на GPU пока не подтверждены и не учтены.</div>
+</section>
+
+<section class="s" id="s10" data-d="point">
+  <div class="k">Тарифы</div>
+  <h2>Три тарифа: <em>лимит бесплатным, голос платным</em></h2>
+  <div class="w" style="grid-template-columns:1fr 1fr 1fr;height:auto">
+    <div class="c Cr"><div class="l">Бесплатный</div><div class="b" style="font-size:82px;margin-top:10px">$0</div>
+      <ul class="tight" style="font-size:21px;gap:14px;margin-top:18px"><li><b>30 минут</b> в месяц базовым голосом</li><li><b>5 минут</b> её голоса, разово на пробу</li><li>Питомец, текст, события Steam</li></ul>
+      <div class="l" style="margin-top:24px">Голос</div><div class="m" style="font-size:19px;margin-top:6px">Supertonic на нашем VPS, $40 в месяц на 500 активных</div>
+      <div class="l" style="margin-top:24px">Расход</div><div class="b" style="font-size:40px;margin-top:6px">$0,17 <span class="m" style="font-size:18px">в месяц при 500 активных</span></div></div>
+    <div class="c R"><div class="l">Средний</div><div class="b" style="font-size:82px;margin-top:10px">$6,99</div>
+      <ul class="tight" style="font-size:21px;gap:14px;margin-top:18px"><li><b>300 минут</b> её голосом</li><li>Потолок 60 минут в день</li><li>Память и реакции</li></ul>
+      <div class="l" style="margin-top:24px">Голос</div><div class="m" style="font-size:19px;margin-top:6px">VoxCPM2, дообученная на её голосе: 4% ошибок на 10 фразах. До порога можно запускать на Inworld</div>
+      <div class="l" style="margin-top:24px">Ноль на аренде карты</div><div class="b" style="font-size:52px;margin-top:6px">~116 <span class="m" style="font-size:18px">платящих</span></div><div class="m" style="font-size:18px;margin-top:6px">При 300 платящих +$3,38 с человека. На Inworld +$3,19 без порога</div></div>
+    <div class="c Li"><div class="l">Дорогой</div><div class="b" style="font-size:82px;margin-top:10px">$14,99</div>
+      <ul class="tight" style="font-size:21px;gap:14px;margin-top:18px"><li><b>600 минут</b> лучшим голосом</li><li>Потолок 60 минут в день</li><li>Премиум-образы и память</li></ul>
+      <div class="l" style="margin-top:24px">Голос</div><div class="m" style="font-size:19px;margin-top:6px">ElevenLabs v4 Turbo: 8 из 10 на слух, сходство 0,88</div>
+      <div class="l" style="margin-top:24px">Остаток с человека</div><div class="b" style="font-size:52px;margin-top:6px">+$4,50</div></div>
+  </div>
+  <div class="src">Комиссия 5%, налог 6%, все выбирают лимит полностью, 310 знаков в минуту. Бесплатный: текст 30 минут $0,07 + проба её голоса $0,07 разово × 25% новых в месяц (допущение) + сервер $40 (расчёт); при 5000 активных $0,12.
+30 минут в день на ElevenLabs реально продавать от $19,99, на Inworld без абонплаты от $14,99. Средний: с $6,99 остаётся $6,24, текст $0,73 на человека, карта фиксированно: аренда Secure $641 в месяц, Community $245 (не всегда есть свободные, ноль при 44 платящих), своя $228 (допущение, ноль при 41).
+Выгоднее Inworld от ~460 платящих на Secure и ~150 на Community.
+На Inworld +$3,19 без абонплаты; на планах Developer +$4,12, Growth +$4,35. Дообучение: 5,6 минуты её речи, 150 шагов; сходство со старым эталоном сравнивать нельзя, другой микрофон. 64 разговора на карту измерены на базовой VoxCPM2, с дообучением нагрузку не мерили.</div>
+</section>
+
+<section class="s" id="s11" data-d="typing">
+  <div class="k">Скины</div>
+  <h2>Скины <em>закрывают 44–62%</em> бесплатного уровня</h2>
+  <div class="w" style="height:590px;grid-template-columns:1.55fr 1fr">
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0">
+      <div class="sk"><img src="d/a-cozy.jpg" alt=""><span>Уютная</span></div>
+      <div class="sk"><img src="d/b-gamer.jpg" alt=""><span>Геймерша</span></div>
+      <div class="sk"><img src="d/c-bookish.jpg" alt=""><span>Книжная</span></div>
+      <div class="sk"><img src="d/d-street.jpg" alt=""><span>Уличная</span></div>
+    </div>
+    <div style="display:grid;grid-template-rows:1fr 1fr 1.25fr;gap:0">
+      <div class="c R"><div class="row" style="justify-content:space-between"><span class="l">Выручка на пользователя</span><span class="tag a">допущение</span></div><div class="b" style="font-size:84px;margin-top:14px;color:var(--pink)">$0,076</div><div class="m" style="margin-top:8px;font-size:18px">2% покупают в месяц, чек $3,99</div></div>
+      <div class="c Cr"><div class="l">Цена бесплатного</div><div class="b" style="font-size:84px;margin-top:14px">$0,17</div><div class="m" style="margin-top:8px;font-size:18px">При 500 активных, $0,12 при 5000. Текст, голос на сервере и проба</div></div>
+      <div class="c Go"><div class="row" style="justify-content:space-between"><span class="l">Витрина</span><span class="b" style="font-size:34px">$2,99–7,99</span></div>
+        <div class="chips" style="margin-top:9px"><span class="tag">образы</span><span class="tag">комнаты</span><span class="tag">реакции</span><span class="tag">танцы</span><span class="tag">голоса</span></div>
+        <div class="b" style="font-size:64px;margin-top:18px">90%+ <span class="m" style="font-size:20px">маржа</span></div>
+        <div class="m" style="margin-top:6px;font-size:18px">Арт разово, нет риска самых активных</div></div>
+    </div>
+  </div>
+  <div class="src">Ориентир рынка: персонаж-DLC в Desktop Mate $14,99, продажи не опубликованы. Образы на витрине — концепты.</div>
+</section>
+
+<section class="s" id="s12" data-d="shrug">
+  <div class="k">Когда сходится</div>
+  <h2>Ноль при <em>3,4–4,8% платящих</em>, дальше решает масштаб</h2>
+  <div class="w" style="grid-template-columns:1.55fr 1fr;height:auto">
+    <div class="c"><div class="l">Итог в месяц, $, налог 6%</div><table style="font-size:20px;margin-top:12px">
+    <tr><th style="padding-left:0">Сценарий</th><th class="n1">Платящих</th><th class="n1">500</th><th class="n1">2000</th><th class="n1">5000</th><th class="n1">Ноль при</th></tr>
+<tr><td style="padding-left:0;color:var(--ink);font-weight:700">Пессимистичный</td><td class="n1">1%</td><td class="n1">−$148</td><td class="n1">−$510</td><td class="n1">−$1 237</td><td class="n1">51–61%</td></tr>
+<tr><td style="padding-left:0;color:var(--ink);font-weight:700">Базовый</td><td class="n1">2,5%</td><td class="n1">−$41</td><td class="n1">−$82</td><td class="n1">−$166</td><td class="n1">3,4–4,8%</td></tr>
+<tr><td style="padding-left:0;color:var(--ink);font-weight:700">Оптимистичный</td><td class="n1">5%</td><td class="n1">+$44</td><td class="n1">+$261</td><td class="n1">+$691</td><td class="n1">1,9–3,0%</td></tr>
+    </table>
+      <div class="l" style="margin-top:26px">Налог, базовый сценарий, 2000 пользователей</div>
+      <div class="m" style="font-size:19px;margin-top:8px">Без налога −$57 · 1% −$61 · 6% −$82 · НДС 20% −$125</div></div>
+    <div class="c Go"><div class="l">Один платящий кормит</div><div class="b" style="font-size:84px;margin-top:8px">~20–28</div><div class="m" style="font-size:19px;margin-top:4px">бесплатных при 500–5000 активных, с сервером</div>
+      <div class="l" style="margin-top:24px">Промо-деньги</div><div class="m" style="font-size:19px;margin-top:6px">Базовый: $41–166 в месяц. Пессимистичный: $148–1&nbsp;237</div>
+      <div class="l" style="margin-top:24px">Своя видеокарта</div><div class="m" style="font-size:19px;margin-top:6px">Сначала аренда: 64 разговора на карту, замер 60 с, без сети. Своя выгоднее аренды Secure примерно через 6 месяцев</div></div>
+  </div>
+  <div class="src">Сценарии: текст $0,38 / $0,145 / $0,08 за час; 474 / 310 / 257 знаков в минуту. Базовый: 2% на среднем + 0,5% на дорогом тарифе, бесплатный $0,091 без сервера, лимит выбран полностью.
+Сервер базового голоса $40 / $77 / $154 в месяц при 500 / 2000 / 5000 активных: расчёт, цены Hetzner CPX, замер на Timeweb. Ноль указан от 5000 до 500 активных.
+Возможность, скорость на них не мерили: Contabo (контракт на 24 месяца) базовый −$6 / −$17 / −$37, ноль при 2,9 / 2,7 / 2,7%; Timeweb Екатеринбург или Казань −$23 / −$40 / −$83, ноль при 3,8 / 3,1 / 3,0%.
+ Средний в сценариях на Inworld, +$3,19 с человека; на карте ноль при ~116 платящих. Итог на весь продукт, без разработки, арта и поддержки. Главные неизвестные: цена текста в реальных сессиях и конверсия, их проверяем на бете.</div>
+</section>
+
+<section class="s" id="s13" data-d="bye">
+  <div class="k">Дальше</div>
+  <h2>Что нужно, чтобы <em>Диана появилась в SteamBooster</em></h2>
+  <div class="w" style="height:640px;grid-template-columns:1fr 1fr 1fr">
+    <div class="c R"><div class="l">От SteamBooster</div>
+      <ul class="tight" style="font-size:22px;gap:19px;margin-top:16px">
+        <li><b>Доступ плагина:</b> сессии, ачивки, друзья, чат</li>
+        <li><b>Микрофон</b> и рисование в Shift+Tab</li>
+        <li><b>20K:</b> это в день или в месяц</li>
+        <li><b>Телеметрия:</b> время в клиенте, доля оплат</li>
+        <li><b>Деньги:</b> средний чек, приём оплат в плагине</li>
+      </ul>
+      <div class="l" style="margin-top:40px">Проверяем дёшево</div>
+      <ul class="tight" style="font-size:22px;gap:19px;margin-top:16px"><li>10 человек по 15 минут, ~$20 токенов: сколько она говорит</li><li>Кнопка «Голос $6,99» на 500 установках</li></ul>
+    </div>
+    <div class="c"><div class="l">Грант ElevenLabs</div>
+      <div class="b" style="font-size:124px;margin-top:12px">33M</div><div class="m" style="font-size:18px;margin-top:4px">на 12 месяцев, ответ за неделю</div>
+      <div style="display:grid;grid-template-columns:104px 1fr 70px;gap:16px 8px;align-items:center;margin-top:22px;font-size:18px">
+        <span class="t2">Кредиты</span><div class="br" style="width:100%;background:var(--pink)" data-tip="Около $5400, если грант в кредитах"></div><b class="b" style="font-size:22px">$5,4K</b>
+        <span class="t2">Знаки API</span><div class="br" style="width:24%;background:var(--pink)" data-tip="$1320, около 1770 часов её голоса на ElevenLabs"></div><b class="b" style="font-size:22px">$1,3K</b>
+        <span class="t2">Не к API</span><div></div><b class="b" style="font-size:22px">$0</b>
+      </div>
+      <div class="m" style="margin-top:16px;font-size:16.5px">Заявка не подана. Уточняем, покрывает ли грант API</div>
+      <ul class="tight" style="font-size:21px;gap:15px;margin-top:18px"><li>Компания до 25 человек, рабочая почта</li><li>Монетизация, продукт 18+</li></ul>
+    </div>
+    <div class="c Li"><div class="l">План и риски</div>
+      <ul class="tight" style="font-size:22px;gap:19px;margin-top:16px">
+        <li><b>Голос:</b> замер нагрузки дообученной VoxCPM2</li>
+        <li><b>Скорость:</b> заглушка сразу после фразы</li>
+        <li><b>Windows:</b> ядро и распознавание</li>
+        <li><b>Грант:</b> заявка после уточнения</li>
+      </ul>
+      <div class="l" style="margin-top:40px">Что может сломать</div>
+      <ul class="tight" style="font-size:22px;gap:19px;margin-top:16px"><li>«Заплатил и закрыл»: нужна причина открыть Steam</li><li>Обновления Steam ломают встраивание</li><li>Бесплатные AIRI и N.E.K.O</li></ul>
+    </div>
+  </div>
+</section>
+
+</div>
+<div id="tip"></div>
+<script>
+const st=document.getElementById('stage'),S=[...document.querySelectorAll('.s')],bar=document.getElementById('bar'),tip=document.getElementById('tip'),di=document.getElementById('diana');
+function fit(){st.style.zoom=innerWidth/1600}
+addEventListener('resize',fit);fit();
+[...new Set(S.map(x=>x.dataset.d))].forEach(n=>{new Image().src='d/'+n+'.webp'});
+S.forEach((x,i)=>{x.querySelector('.k').dataset.n=String(i+1).padStart(2,'0')});
+const pan=document.getElementById('pan'),num=document.getElementById('num'),PC=['#7c9ac8','#dcbf93','#c0a3de','#f9edee'];
+let cur='wave';
+function onS(){const m=innerHeight*.45;let on=S[0];for(const x of S){if(x.getBoundingClientRect().top<=m)on=x}
+ if(on.dataset.d!==cur){cur=on.dataset.d;di.src='d/'+cur+'.webp'}
+ const ix=S.indexOf(on);pan.style.background=PC[ix%PC.length];num.textContent=String(ix+1).padStart(2,'0');
+ const h=document.documentElement.scrollHeight-innerHeight;bar.style.width=(h>0?scrollY/h*100:0)+'%'}
+addEventListener('scroll',onS,{passive:true});
+function jump(){const t=location.hash&&document.querySelector(location.hash);if(t)t.scrollIntoView({block:'start'});onS()}
+addEventListener('load',()=>{jump();setTimeout(jump,400)});addEventListener('hashchange',jump);jump();
+addEventListener('mousemove',e=>{const t=e.target.closest&&e.target.closest('[data-tip]');if(!t){tip.style.display='none';return}tip.textContent=t.dataset.tip;tip.style.display='block';tip.style.left=e.clientX+14+'px';tip.style.top=e.clientY-30+'px'});
+
+</script>
+</body>
+</html>
